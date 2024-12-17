@@ -27,6 +27,8 @@ rule write_sample_list:
         "hybpiper/sample_list.txt"
     log:
         "logs/write_sample_list.log"
+    conda:
+        "../envs/base.yml"
     params:
         expand("{sample}",sample=SAMPLES["sample_name"])
     run:
