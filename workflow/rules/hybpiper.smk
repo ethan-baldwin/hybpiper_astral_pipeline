@@ -18,12 +18,14 @@ rule hybpiper_assemble:
 
 rule write_sample_list:
     input:
-        expand("{sample}",sample=SAMPLES["sample_name"])
+        assemble_done=expand("hybpiper/{sample}",sample=SAMPLES["sample_name"])
     output:
         "hybpiper/sample_list.txt"
+    params:
+        expand("{sample}",sample=SAMPLES["sample_name"])
     run:
         with open(output[0], 'w') as f:
-            for line in input:
+            for line in params:
                 f.write("%s\n" % line)
 
 rule hybpiper_stats:
