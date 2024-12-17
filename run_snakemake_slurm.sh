@@ -12,4 +12,4 @@
 
 ml snakemake
 
-snakemake --executor slurm
+snakemake --profile /home/eab77806/.config/slurm_profile
