@@ -12,4 +12,4 @@
 
 ml snakemake
 
-snakemake
+snakemake --executor slurm
