@@ -16,7 +16,7 @@ rule gene_tree:
 
 rule merge_trees:
     input:
-        expand("trimmed_alignments/{{gene}}.trimal.aln.treefile")
+        expand("trimmed_alignments/{gene}.trimal.aln.treefile", gene = GENES)
     output:
         'merged.treefile'
     log:

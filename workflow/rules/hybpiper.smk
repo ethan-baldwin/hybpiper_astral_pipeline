@@ -66,7 +66,9 @@ rule hybpiper_retrieve_sequences:
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
-        target_file=config["target_file"]
+        target_file=config["target_file"],
+        # mapper=config["mapper"],
+        extra_flags=config["hybpiper_extra_flags"]
     resources:
         mem_mb=20000,
         cpus_per_task=8
