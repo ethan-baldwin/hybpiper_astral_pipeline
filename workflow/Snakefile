@@ -14,7 +14,7 @@ include: "rules/trim_alignments.smk"
 include: "rules/gene_trees.smk"
 include: "rules/species_tree.smk"
 
-workdir: config['outdir']
+# workdir: config['outdir']
 
 rule all:
     input:
