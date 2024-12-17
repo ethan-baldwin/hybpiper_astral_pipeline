@@ -15,8 +15,8 @@ rule hybpiper_assemble:
         extra_flags=config["hybpiper_extra_flags"],
         sample_name="{sample}"
     resources:
-        mem_mb=20000,
-        cpus_per_task=8
+        mem_mb=50000,
+        cpus_per_task=32
     shell:
         "hybpiper assemble -t_dna {params.target_file} -r {input.r1} {input.r2} --prefix {params.sample_name} -o hybpiper {params.extra_flags}"
 
