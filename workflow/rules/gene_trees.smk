@@ -17,7 +17,7 @@ rule gene_tree:
 rule merge_trees:
     input:
         gene_list="genelist.txt",
-        trees=lambda wildcards, input: expand("trimmed_alignments/{gene}.trimal.aln.treefile",gene=[line.strip() for line in open(input.gene_list)])
+        trees=lambda wildcards, inputs: expand("trimmed_alignments/{gene}.trimal.aln.treefile",gene=read_genelist("genelist.txt"))
     output:
         'merged.treefile'
     log:
