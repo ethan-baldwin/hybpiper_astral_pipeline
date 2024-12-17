@@ -71,4 +71,4 @@ checkpoint hybpiper_retrieve_sequences:
         mem_mb=20000,
         cpus_per_task=8
     shell:
-        "hybpiper retrieve_sequences supercontig -t_dna {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper {params.extra_flags} --fasta_dir {output}"
+        "hybpiper retrieve_sequences supercontig -t_dna {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper --fasta_dir {output}"
