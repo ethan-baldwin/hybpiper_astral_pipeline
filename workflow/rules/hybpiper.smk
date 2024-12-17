@@ -1,20 +1,20 @@
 rule hybpiper_assemble:
     input:
         r1="trimmed_reads/{sample}_P_R1.fastq.gz",
-        r2="trimmed_reads/{sample}_P_R2.fastq.gz",
-        sample_name="{sample}"
+        r2="trimmed_reads/{sample}_P_R2.fastq.gz"
     output:
         directory("hybpiper/{sample}")
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
         target_file=config["target_file"],
-        extra_flags=config["hybpiper_extra_flags"]
+        extra_flags=config["hybpiper_extra_flags"],
+        sample_name="{sample}"
     resources:
         mem_mb=20000,
         cpus_per_task=8
     shell:
-        "hybpiper assemble -t_dna {params.target_file} -r {input.r1} {input.r2} --prefix {input.sample_name} -o hybpiper {params.extra_flags}"
+        "hybpiper assemble -t_dna {params.target_file} -r {input.r1} {input.r2} --prefix {params.sample_name} -o hybpiper {params.extra_flags}"
 
 rule write_sample_list:
     input:
