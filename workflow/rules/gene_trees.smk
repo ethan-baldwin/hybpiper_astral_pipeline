@@ -16,10 +16,10 @@ rule gene_tree:
 
 rule merge_trees:
     input:
-        expand("trimmed_alignments/{gene}.trimal.aln.treefile", gene = GENES)
+        expand("trimmed_alignments/{gene}.trimal.aln.treefile", gene=get_genes)
     output:
-        'merged.treefile'
+        "merged.treefile"
     log:
         "logs/merge_trees.log"
     shell:
-        "cat {input} > merged.treefile"
+        "cat {input} > {output}"

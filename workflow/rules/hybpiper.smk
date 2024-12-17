@@ -53,9 +53,9 @@ rule hybpiper_stats:
     shell:
         "hybpiper stats -t_dna {params.target_file} gene {input}"
 
-rule hybpiper_retrieve_sequences:
+checkpoint hybpiper_retrieve_sequences:
     input:
-        expand("hybpiper/{sample}",sample=SAMPLES["sample_name"]),
+        expand("hybpiper/{sample}", sample=SAMPLES["sample_name"]),
         sample_list="hybpiper/sample_list.txt"
     output:
         directory("fasta")
@@ -67,7 +67,6 @@ rule hybpiper_retrieve_sequences:
         "Hybpiper/2.3.1-foss-2023a"
     params:
         target_file=config["target_file"],
-        # mapper=config["mapper"],
         extra_flags=config["hybpiper_extra_flags"]
     resources:
         mem_mb=20000,
