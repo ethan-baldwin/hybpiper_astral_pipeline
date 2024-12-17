@@ -53,9 +53,9 @@ rule hybpiper_stats:
     shell:
         "hybpiper stats -t_dna {params.target_file} gene {input}"
 
-rule hybpiper_retrieve_sequences:
+checkpoint hybpiper_retrieve_sequences:
     input:
-        expand("hybpiper/{sample}",sample=SAMPLES["sample_name"]),
+        expand("hybpiper/{sample}", sample=SAMPLES["sample_name"]),
         sample_list="hybpiper/sample_list.txt"
     output:
         directory("fasta")

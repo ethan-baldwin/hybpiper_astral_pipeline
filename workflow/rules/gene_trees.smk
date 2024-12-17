@@ -16,12 +16,12 @@ rule gene_tree:
 
 rule merge_trees:
     input:
-        expand("trimmed_alignments/{{gene}}.trimal.aln.treefile")
+        expand("trimmed_alignments/{gene}.trimal.aln.treefile", gene=get_genes)
     output:
-        'merged.treefile'
+        "merged.treefile"
     log:
         "logs/merge_trees.log"
     conda:
         "../envs/base.yml"
     shell:
-        "cat {input} > merged.treefile"
+        "cat {input} > {output}"
