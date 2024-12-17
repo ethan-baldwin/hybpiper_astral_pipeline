@@ -14,7 +14,7 @@ rule fastp:
     log:
         "logs/fastp_{sample}.log"
     conda:
-        "../envs/fastp.yaml"
+        "../envs/fastp.yml"
     envmodules:
         "fastp/0.23.2-GCC-11.3.0"
     resources:

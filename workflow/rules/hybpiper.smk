@@ -7,7 +7,7 @@ rule hybpiper_assemble:
     log:
         "logs/hybpiper_assemble_{sample}.log"
     conda:
-        "../envs/hybpiper.yaml"
+        "../envs/hybpiper.yml"
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
@@ -42,7 +42,7 @@ rule hybpiper_stats:
     log:
         "logs/hybpiper_stats.log"
     conda:
-        "../envs/hybpiper.yaml"
+        "../envs/hybpiper.yml"
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
@@ -62,7 +62,7 @@ checkpoint hybpiper_retrieve_sequences:
     log:
         "logs/hybpiper_retrieve_sequences.log"
     conda:
-        "../envs/hybpiper.yaml"
+        "../envs/hybpiper.yml"
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
