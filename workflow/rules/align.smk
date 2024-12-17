@@ -1,5 +1,3 @@
-SAMPLES = glob_wildcards("fasta/{gene}.fasta").gene
-
 rule align:
     input:
         "fasta/{gene}.fasta"

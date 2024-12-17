@@ -1,3 +1,5 @@
+GENES = glob_wildcards("fasta/{gene}.fasta").gene
+
 rule gene_tree:
     input:
         "trimmed_alignments/{gene}.trimal.aln"
@@ -14,7 +16,7 @@ rule gene_tree:
 
 rule merge_trees:
     input:
-        expand("trimmed_alignments/{gene}.trimal.aln.treefile", sample = SAMPLES)
+        expand("trimmed_alignments/{gene}.trimal.aln.treefile", gene = GENES)
     output:
         'merged.treefile'
     log:
