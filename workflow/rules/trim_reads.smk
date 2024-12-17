@@ -4,7 +4,7 @@ rule fastp:
         r2=lambda wildcards: f"raw_reads/{get_sample_read2[wildcards.sample]}"
     output:
         trimmed1="trimmed_reads/{sample}_P_R1.fastq.gz",
-        trimmed2="trimmed_reads/{sample}_P_R1.fastq.gz",
+        trimmed2="trimmed_reads/{sample}_P_R2.fastq.gz",
         # Unpaired reads separately
         unpaired1="trimmed_reads/failed/{sample}_U_R1.fastq.gz",
         unpaired2="trimmed_reads/failed/{sample}_U_R2.fastq.gz",
