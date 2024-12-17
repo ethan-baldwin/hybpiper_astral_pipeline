@@ -16,7 +16,8 @@ rule gene_tree:
 
 rule merge_trees:
     input:
-        expand("trimmed_alignments/{{gene}}.trimal.aln.treefile")
+        gene_list="genelist.txt",
+        trees=lambda wildcards, input: expand("trimmed_alignments/{gene}.trimal.aln.treefile",gene=[line.strip() for line in open(input.gene_list)])
     output:
         'merged.treefile'
     log:
@@ -24,4 +25,4 @@ rule merge_trees:
     conda:
         "../envs/base.yml"
     shell:
-        "cat {input} > merged.treefile"
+        "cat {input.trees} > {output}"
