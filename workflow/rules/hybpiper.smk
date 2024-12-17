@@ -5,7 +5,7 @@ rule hybpiper_assemble:
     output:
         directory("hybpiper/{sample}")
     log:
-        "logs/hybpiper_assemble.log"
+        "logs/hybpiper_assemble_{sample}.log"
     conda:
         "../envs/hybpiper.yaml"
     envmodules:

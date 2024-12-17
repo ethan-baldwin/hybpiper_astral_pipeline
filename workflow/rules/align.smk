@@ -1,10 +1,12 @@
+SAMPLES = glob_wildcards("fasta/{gene}.fasta").gene
+
 rule align:
     input:
-        "fasta/{sample}.fasta"
+        "fasta/{gene}.fasta"
     output:
-        "alignments/{sample}.aln"
+        "alignments/{gene}.aln"
     log:
-        "logs/align.log"
+        "logs/alignments/{gene}.log"
     conda:
         "../envs/mafft.yml"
     envmodules:

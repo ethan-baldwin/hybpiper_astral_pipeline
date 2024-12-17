@@ -12,7 +12,7 @@ rule fastp:
         html="fastp_report/{sample}.html",
         json="fastp_report/{sample}.json"
     log:
-        "logs/fastp.log"
+        "logs/fastp_{sample}.log"
     conda:
         "../envs/fastp.yaml"
     envmodules:

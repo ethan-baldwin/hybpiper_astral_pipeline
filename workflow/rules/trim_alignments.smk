@@ -1,10 +1,10 @@
 rule trim_alignments:
     input:
-        "alignments/{sample}.aln"
+        "alignments/{gene}.aln"
     output:
-        "trimmed_alignments/{sample}.trimal.aln"
+        "trimmed_alignments/{gene}.trimal.aln"
     log:
-        "logs/trim_alignments.log"
+        "logs/trim_alignments/{gene}.log"
     conda:
         "../envs/trimal.yml"
     envmodules:

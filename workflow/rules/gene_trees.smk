@@ -1,10 +1,10 @@
 rule gene_tree:
     input:
-        "trimmed_alignments/{sample}.trimal.aln"
+        "trimmed_alignments/{gene}.trimal.aln"
     output:
-        "trimmed_alignments/{sample}.trimal.aln.treefile"
+        "trimmed_alignments/{gene}.trimal.aln.treefile"
     log:
-        "logs/gene_tree.log"
+        "logs/gene_trees/{gene}.log"
     conda:
         "../envs/iqtree.yml"
     envmodules:
@@ -18,6 +18,6 @@ rule merge_trees:
     output:
         'merged.treefile'
     log:
-        "logs/gene_tree.log"
+        "logs/merge_trees.log"
     shell:
-        "cat iqtree/*.trimal.aln.treefile > merged.treefile"
+        "cat {input} > merged.treefile"
