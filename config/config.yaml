@@ -3,7 +3,7 @@ samples: /home/eab77806/hybpiper_astral_pipeline/config/samples.tsv
 outdir: /scratch/eab77806/hybpiper_snakemake
 target_file: target/combined.target_fixed.fa
 
-hybpiper_extra_flags: "--bwa --timeout_exonerate_contigs 3000 --cov_cutoff 3"
+hybpiper_extra_flags: "--bwa --timeout_extract_contigs 3000 --cov_cutoff 3"
 
 # executor: slurm
 # jobs: 500
