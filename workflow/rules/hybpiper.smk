@@ -72,15 +72,3 @@ rule hybpiper_retrieve_sequences:
         cpus_per_task=8
     shell:
         "hybpiper retrieve_sequences supercontig -t_dna {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper {params.extra_flags} --fasta_dir {output}"
-
-rule make_gene_list:
-    input:
-        directory("fasta")
-    output:
-        "genelist.txt"
-    log:
-        "logs/make_gene_list.log"
-    conda:
-        "../envs/base.yaml"
-    shell:
-        "for file in {input}/*fasta; do echo $file | sed 's/.fasta//' > genelist.txt"
