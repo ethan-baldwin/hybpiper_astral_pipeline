@@ -11,6 +11,10 @@ rule fastp:
         failed="trimmed_reads/failed/{sample}.failed.fastq",
         html="fastp_report/{sample}.html",
         json="fastp_report/{sample}.json"
+    log:
+        "logs/fastp.log"
+    conda:
+        "../envs/fastp.yaml"
     envmodules:
         "fastp/0.23.2-GCC-11.3.0"
     resources:

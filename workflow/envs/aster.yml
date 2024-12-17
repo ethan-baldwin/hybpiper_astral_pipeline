@@ -1,0 +1,13 @@
+name: /home/eab77806/envs/aster
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - aster=1.19=h9948957_1
+  - libgcc=14.2.0=h77fa898_1
+  - libgomp=14.2.0=h77fa898_1
+  - libstdcxx=14.2.0=hc0a3c3a_1
+prefix: /home/eab77806/envs/aster

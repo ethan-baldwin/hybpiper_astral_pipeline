@@ -4,6 +4,10 @@ rule hybpiper_assemble:
         r2="trimmed_reads/{sample}_P_R2.fastq.gz"
     output:
         directory("hybpiper/{sample}")
+    log:
+        "logs/hybpiper_assemble.log"
+    conda:
+        "../envs/hybpiper.yaml"
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
@@ -21,6 +25,8 @@ rule write_sample_list:
         assemble_done=expand("hybpiper/{sample}",sample=SAMPLES["sample_name"])
     output:
         "hybpiper/sample_list.txt"
+    log:
+        "logs/write_sample_list.log"
     params:
         expand("{sample}",sample=SAMPLES["sample_name"])
     run:
@@ -33,6 +39,10 @@ rule hybpiper_stats:
         "hybpiper/sample_list.txt"
     output:
         "seq_lengths.tsv"
+    log:
+        "logs/hybpiper_stats.log"
+    conda:
+        "../envs/hybpiper.yaml"
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
@@ -48,7 +58,11 @@ rule hybpiper_retrieve_sequences:
         expand("hybpiper/{sample}",sample=SAMPLES["sample_name"]),
         sample_list="hybpiper/sample_list.txt"
     output:
-        directory("hybpiper/fasta")
+        directory("fasta")
+    log:
+        "logs/hybpiper_retrieve_sequences.log"
+    conda:
+        "../envs/hybpiper.yaml"
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:

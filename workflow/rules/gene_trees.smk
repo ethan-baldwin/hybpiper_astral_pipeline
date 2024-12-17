@@ -1,0 +1,23 @@
+rule gene_tree:
+    input:
+        "trimmed_alignments/{sample}.trimal.aln"
+    output:
+        "trimmed_alignments/{sample}.trimal.aln.treefile"
+    log:
+        "logs/gene_tree.log"
+    conda:
+        "../envs/iqtree.yml"
+    envmodules:
+        "IQ-TREE/2.2.2.6-gompi-2022a"
+    shell:
+        "iqtree2 -s {input} -nt AUTO -bb 1000 -m MFP"
+
+rule merge_trees:
+    input:
+        expand("trimmed_alignments/{sample}.trimal.aln.treefile", sample = SAMPLES)
+    output:
+        'merged.treefile'
+    log:
+        "logs/gene_tree.log"
+    shell:
+        "cat iqtree/*.trimal.aln.treefile > merged.treefile"

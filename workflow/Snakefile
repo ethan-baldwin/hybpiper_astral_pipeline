@@ -9,9 +9,13 @@ configfile: "config/config.yaml"
 include: "rules/common.smk"
 include: "rules/trim_reads.smk"
 include: "rules/hybpiper.smk"
+include: "rules/align.smk"
+include: "rules/trim_alignments.smk"
+include: "rules/gene_trees.smk"
+include: "rules/species_tree.smk"
 
 workdir: config['outdir']
 
 rule all:
     input:
-        "hybpiper/fasta"
+        "astral/speciestree.tre"

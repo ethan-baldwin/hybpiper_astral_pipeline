@@ -1,8 +1,12 @@
-rule Align:
+rule align:
     input:
         "fasta/{sample}.fasta"
     output:
         "alignments/{sample}.aln"
+    log:
+        "logs/align.log"
+    conda:
+        "../envs/mafft.yml"
     envmodules:
         "MAFFT/7.505-GCC-11.3.0-with-extensions"
     resources:
