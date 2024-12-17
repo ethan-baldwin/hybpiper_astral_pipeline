@@ -1,6 +1,6 @@
 samples: config/samples.tsv
 
-outdir: /scratch/eab77806/genome_assembly/final/
+outdir: /scratch/eab77806/hybpiper_snakemake
 target_file: target/combined.target_fixed.fa
 
 hybpiper_extra_flags: "--bwa --timeout_exonerate_contigs 3000 --cov_cutoff 3"
