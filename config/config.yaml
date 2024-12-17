@@ -1,4 +1,4 @@
-samples: config/samples.tsv
+samples: /home/eab77806/hybpiper_astral_pipeline/config/samples.tsv
 
 outdir: /scratch/eab77806/hybpiper_snakemake
 target_file: target/combined.target_fixed.fa
