@@ -83,4 +83,9 @@ rule make_gene_list:
     conda:
         "../envs/base.yaml"
     shell:
-        "for file in {input}/*fasta; do echo $file | sed 's/.fasta//' > genelist.txt"
+        """
+        rm -f {output}  # Ensure fresh list
+        for file in {input}/*.fasta; do
+            basename $file .fasta >> {output}
+        done
+        """
