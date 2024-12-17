@@ -14,7 +14,7 @@ rule gene_tree:
 
 rule merge_trees:
     input:
-        expand("trimmed_alignments/{sample}.trimal.aln.treefile", sample = SAMPLES)
+        expand("trimmed_alignments/{gene}.trimal.aln.treefile", sample = SAMPLES)
     output:
         'merged.treefile'
     log:
