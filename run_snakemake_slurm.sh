@@ -12,4 +12,4 @@
 
 ml snakemake
 
-snakemake --profile /home/eab77806/.config/slurm_profile/ --directory /scratch/eab77806/hybpiper_snakemake/ --configfile /home/eab77806/hybpiper_astral_pipeline/config/config.yaml
+snakemake --profile /home/eab77806/.config/slurm_profile/ --directory /scratch/eab77806/hybpiper_snakemake/ --configfile /home/eab77806/hybpiper_astral_pipeline/config/config.yaml --rerun-incomplete
