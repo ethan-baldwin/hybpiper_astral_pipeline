@@ -28,11 +28,11 @@ rule write_sample_list:
     log:
         "logs/write_sample_list.log"
     params:
-        expand("{sample}",sample=SAMPLES["sample_name"])
+        sample_list=SAMPLES["sample_name"]
     run:
         with open(output[0], 'w') as f:
-            for line in params:
-                f.write("%s\n" % line)
+            for sample in params.sample_list:
+                f.write(f"{sample}\n")
 
 rule hybpiper_stats:
     input:
