@@ -1,12 +1,12 @@
 sample_name	read1	read2
 S_alabamensis	20031797_SAAL_S7_R1_001.fastq.gz	20031797_SAAL_S7_R2_001.fastq.gz
-S_alata_m003	S_alata_m003_P_R1.fastq.gz	S_alata_m003_P_R2.fastq.gz
+S_alata_m003	20031784_S2_R1_001.fastq.gz	20031784_S2_R2_001.fastq.gz
 S_flava_2	Flava2_S110_L004_R1_001.fastq.gz	Flava2_S110_L004_R2_001.fastq.gz
 S_jonesii	SRJKANUGA912_S2_R1_001.fastq.gz	SRJKANUGA912_S2_R2_001.fastq.gz
 S_leucophylla	SLTHFL1511_S5_R1_001.fastq.gz	SLTHFL1511_S5_R2_001.fastq.gz
 S_minor_2	Minor2_S111_L004_R1_001.fastq.gz	Minor2_S111_L004_R2_001.fastq.gz
 S_minor_okefenokeensis	SMOKEE1433_S6_R1_001.fastq.gz	SMOKEE1433_S6_R2_001.fastq.gz
-S_oreophila_m002	S_oreophila_m002_P_R1.fastq.gz	S_oreophila_m002_P_R2.fastq.gz
+S_oreophila_m002	20031687_S1_R1_001.fastq.gz	20031687_S1_R2_001.fastq.gz
 S_psittacina_P008	P008_S56_L004_R1_001.fastq.gz	P008_S56_L004_R2_001.fastq.gz
 S_psittacina_okefenokeensis	SPSOCAL944_S1_R1_001.fastq.gz	SPSOCAL944_S1_R2_001.fastq.gz
 S_purpurea_montana	SPMHRB181522_S4_R1_001.fastq.gz	SPMHRB181522_S4_R2_001.fastq.gz
