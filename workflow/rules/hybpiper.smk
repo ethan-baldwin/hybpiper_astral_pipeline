@@ -41,17 +41,17 @@ rule hybpiper_stats:
         "seq_lengths.tsv"
     log:
         "logs/hybpiper_stats.log"
-    conda:
-        "../envs/hybpiper.yml"
+    # conda:
+    #     "../envs/hybpiper.yml"
     envmodules:
-        "Hybpiper/2.3.1-foss-2023a"
+        "Hybpiper/2.1.6-foss-2022b"
     params:
         target_file=config["target_file"]
     resources:
         mem_mb=5000,
         cpus_per_task=1
     shell:
-        "hybpiper stats -t_dna {params.target_file} gene {input}"
+        "hybpiper stats -t_dna {params.target_file} supercontig {input}"
 
 checkpoint hybpiper_retrieve_sequences:
     input:
