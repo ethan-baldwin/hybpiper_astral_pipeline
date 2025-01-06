@@ -11,14 +11,14 @@ rule hybpiper_assemble:
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
-        target_file=config["target_file"],
+        target_file=config["target_file_command"],
         extra_flags=config["hybpiper_extra_flags"],
         sample_name="{sample}"
     resources:
         mem_mb=50000,
         cpus_per_task=32
     shell:
-        "hybpiper assemble -t_dna {params.target_file} -r {input.r1} {input.r2} --prefix {params.sample_name} -o hybpiper {params.extra_flags}"
+        "hybpiper assemble {params.target_file} -r {input.r1} {input.r2} --prefix {params.sample_name} -o hybpiper {params.extra_flags}"
 
 rule write_sample_list:
     input:
@@ -46,12 +46,12 @@ rule hybpiper_stats:
     envmodules:
         "Hybpiper/2.1.6-foss-2022b"
     params:
-        target_file=config["target_file"]
+        target_file=config["target_file_command"]
     resources:
         mem_mb=5000,
         cpus_per_task=1
     shell:
-        "hybpiper stats -t_dna {params.target_file} supercontig {input}"
+        "hybpiper stats {params.target_file} supercontig {input}"
 
 checkpoint hybpiper_retrieve_sequences:
     input:
@@ -66,9 +66,9 @@ checkpoint hybpiper_retrieve_sequences:
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
-        target_file=config["target_file"]
+        target_file=config["target_file_command"]
     resources:
         mem_mb=20000,
         cpus_per_task=8
     shell:
-        "hybpiper retrieve_sequences supercontig -t_dna {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper --fasta_dir {output}"
+        "hybpiper retrieve_sequences supercontig {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper --fasta_dir {output}"
