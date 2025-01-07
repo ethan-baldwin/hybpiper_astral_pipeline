@@ -6,7 +6,7 @@ target_file_command: "-t_aa target/photosynthesis_target.faa"
 # # whether the target file is amino acid or nucleotide: amino or nuc
 # target_type: amino
 
-hybpiper_extra_flags: "--timeout_extract_contigs 3000 --cov_cutoff 3"
+hybpiper_extra_flags: "--diamond --timeout_extract_contigs 3000 --cov_cutoff 3 "
 
 # executor: slurm
 # jobs: 500

@@ -16,7 +16,8 @@ rule hybpiper_assemble:
         sample_name="{sample}"
     resources:
         mem_mb=50000,
-        cpus_per_task=32
+        cpus_per_task=32,
+        runtime=6000
     shell:
         "hybpiper assemble {params.target_file} -r {input.r1} {input.r2} --prefix {params.sample_name} -o hybpiper {params.extra_flags}"
 
