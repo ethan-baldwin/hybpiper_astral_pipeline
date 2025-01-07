@@ -1,12 +1,15 @@
 samples: /home/eab77806/hybpiper_astral_pipeline/config/samples.tsv
 
 outdir: /scratch/eab77806/hybpiper_snakemake
+
+# include either -t_aa for an amino acid target file or -t_dna for a dna target file
 target_file_command: "-t_aa target/photosynthesis_target.faa"
 
-# # whether the target file is amino acid or nucleotide: amino or nuc
-# target_type: amino
-
+# for dna target files, include --bwa
 hybpiper_extra_flags: "--diamond --timeout_extract_contigs 3000 --cov_cutoff 3 "
+
+# whether you want to retrieve genes or supercontigs. accepted values: gene, GENE, supercontig, SUPERCONTIG
+sequence_type: gene
 
 # executor: slurm
 # jobs: 500

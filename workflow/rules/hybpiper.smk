@@ -47,12 +47,13 @@ rule hybpiper_stats:
     envmodules:
         "Hybpiper/2.1.6-foss-2022b"
     params:
-        target_file=config["target_file_command"]
+        target_file=config["target_file_command"],
+        sequence_type=config["sequence_type"]
     resources:
         mem_mb=5000,
         cpus_per_task=1
     shell:
-        "hybpiper stats {params.target_file} supercontig {input}"
+        "hybpiper stats {params.target_file} {params.sequence_type} {input}"
 
 checkpoint hybpiper_retrieve_sequences:
     input:
@@ -67,9 +68,10 @@ checkpoint hybpiper_retrieve_sequences:
     envmodules:
         "Hybpiper/2.3.1-foss-2023a"
     params:
-        target_file=config["target_file_command"]
+        target_file=config["target_file_command"],
+        sequence_type=config["sequence_type"]
     resources:
         mem_mb=20000,
         cpus_per_task=8
     shell:
-        "hybpiper retrieve_sequences supercontig {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper --fasta_dir {output}"
+        "hybpiper retrieve_sequences {params.sequence_type} {params.target_file} --sample_names {input.sample_list} --hybpiper_dir hybpiper --fasta_dir {output}"
