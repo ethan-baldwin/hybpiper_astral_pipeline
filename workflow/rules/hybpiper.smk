@@ -6,10 +6,10 @@ rule hybpiper_assemble:
         directory("hybpiper/{sample}")
     log:
         "logs/hybpiper_assemble_{sample}.log"
-    conda:
-        "../envs/hybpiper.yml"
+    # conda:
+    #     "../envs/hybpiper.yml"
     envmodules:
-        "Hybpiper/2.3.1-foss-2023a"
+        "Hybpiper/2.1.6-foss-2022b"
     params:
         target_file=config["target_file_command"],
         extra_flags=config["hybpiper_extra_flags"],
@@ -63,10 +63,10 @@ checkpoint hybpiper_retrieve_sequences:
         directory("fasta")
     log:
         "logs/hybpiper_retrieve_sequences.log"
-    conda:
-        "../envs/hybpiper.yml"
+    # conda:
+    #     "../envs/hybpiper.yml"
     envmodules:
-        "Hybpiper/2.3.1-foss-2023a"
+        "Hybpiper/2.1.6-foss-2022b"
     params:
         target_file=config["target_file_command"],
         sequence_type=config["sequence_type"]
