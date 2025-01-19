@@ -9,7 +9,7 @@ target_file_command: "-t_dna target/combined.target_problem_genes_removed.fa"
 hybpiper_extra_flags: "--bwa --timeout_exonerate_contigs 3000 --cov_cutoff 3 "
 
 # whether you want to retrieve genes or supercontigs. accepted values: gene, GENE, supercontig, SUPERCONTIG
-sequence_type: gene
+sequence_type: supercontig
 
 # executor: slurm
 # jobs: 500
