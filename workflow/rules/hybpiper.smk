@@ -15,7 +15,7 @@ rule hybpiper_assemble:
         extra_flags=config["hybpiper_extra_flags"],
         sample_name="{sample}"
     resources:
-        mem_mb=50000,
+        mem_mb=90000,
         cpus_per_task=32,
         runtime=6000
     shell:
