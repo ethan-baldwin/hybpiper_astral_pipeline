@@ -18,7 +18,7 @@ rule fastp:
     envmodules:
         "fastp/0.23.2-GCC-11.3.0"
     resources:
-        mem_mb=12000,
+        mem_mb=24000,
         cpus_per_task=16
     shell:
         "fastp -w {resources.cpus_per_task} --dont_overwrite --in1 {input.r1} --in2 {input.r2} --out1 {output.trimmed1} --out2 {output.trimmed2} --unpaired1 {output.unpaired1} --unpaired2 {output.unpaired2} --failed_out {output.failed} -j {output.json} -h {output.html}"
