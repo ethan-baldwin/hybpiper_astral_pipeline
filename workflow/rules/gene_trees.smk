@@ -29,7 +29,7 @@ rule merge_trees:
         "merged.treefile"
     log:
         "logs/merge_trees.log"
-    conda:
-        "../envs/base.yml"
+    # conda:
+    #     "../envs/base.yml"
     shell:
         "cat {input} > {output}"
