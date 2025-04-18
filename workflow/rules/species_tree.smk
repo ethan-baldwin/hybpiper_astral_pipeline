@@ -64,7 +64,7 @@ rule analyze_trees:
         species_tree="astral/astral4_bs10.tre"
     output:
         scored="astral/astral_4_bs10_scored.tre",
-        polytomy="astral/astral_4_bs10_poly.tre",
+        poly="astral/astral_4_bs10_poly.tre",
         alt_freq="astral/astral_4_bs10_qs.tre",
         freq_csv="astral/astral_4_bs10_qf.tre"
     log:
