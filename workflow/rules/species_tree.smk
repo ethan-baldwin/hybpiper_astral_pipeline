@@ -37,6 +37,8 @@ rule wastral_raw_gene_trees:
         "../envs/aster.yml"
     envmodules:
         "ASTER/1.16-GCC-11.3.0"
+    params:
+        outgroup=config["outgroup"]
     shell:
         "wastral --root {params.outgroup} -i {input} -o {output}"
 
@@ -51,6 +53,8 @@ rule astral4_collapsed_gene_trees:
         "../envs/aster.yml"
     envmodules:
         "ASTER/1.16-GCC-11.3.0"
+    params:
+        outgroup=config["outgroup"]
     shell:
         "wastral --root {params.outgroup} -i {input} -o {output}"
 
