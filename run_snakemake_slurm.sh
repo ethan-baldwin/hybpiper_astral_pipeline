@@ -11,5 +11,6 @@
 #SBATCH --error=/scratch/eab77806/logs/%x_%j.error
 
 ml snakemake
+ml Mamba
 
 snakemake --profile /home/eab77806/.config/slurm_profile/ --directory /scratch/eab77806/hybpiper_snakemake/ --configfile /home/eab77806/hybpiper_astral_pipeline/config/config.yaml --rerun-incomplete --use-conda
