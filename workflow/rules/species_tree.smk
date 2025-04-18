@@ -75,6 +75,6 @@ rule analyze_trees:
         """
         java -jar $EBROOTASTRAL/astral.5.7.8.jar -i {input.gene_trees} -q {input.species_tree} -o {output.scored}
         java -jar $EBROOTASTRAL/astral.5.7.8.jar -i {input.gene_trees} -q {input.species_tree} -t 10 -o {output.poly}
-        java -jar $EBROOTASTRAL/astral.5.7.8.jar -i {input.gene_trees} -q {input.species_tree} -t 8 -o {output.qs}
-        java -jar $EBROOTASTRAL/astral.5.7.8.jar -i {input.gene_trees} -q {input.species_tree} -t 16 -o {output.qf}
+        java -jar $EBROOTASTRAL/astral.5.7.8.jar -i {input.gene_trees} -q {input.species_tree} -t 8 -o {output.alt_freq}
+        java -jar $EBROOTASTRAL/astral.5.7.8.jar -i {input.gene_trees} -q {input.species_tree} -t 16 -o {output.freq_csv}
         """
