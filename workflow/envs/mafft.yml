@@ -15,7 +15,8 @@ dependencies:
   - libgomp=14.2.0=h77fa898_1
   - libstdcxx=14.2.0=hc0a3c3a_1
   - libstdcxx-ng=14.2.0=h4852527_1
-  - mafft=7.525=h031d066_1
+  - mafft=7.526=h4bc722e_0
+  # - mafft=7.525=h031d066_1
   - mpfr=4.2.1=h90cbb55_3
   - ncurses=6.5=he02047a_1
   - readline=8.2=h8228510_1
