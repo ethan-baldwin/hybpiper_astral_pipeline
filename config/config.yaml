@@ -11,12 +11,5 @@ hybpiper_extra_flags: "--bwa --timeout_exonerate_contigs 3000 --cov_cutoff 3 "
 # whether you want to retrieve genes or supercontigs. accepted values: gene, GENE, supercontig, SUPERCONTIG
 sequence_type: supercontig
 
-# executor: slurm
-# jobs: 500
-# use-envmodules: True
-# default-resources:
-#   slurm_account: "jlmlab"
-#   slurm_partition: "batch"
-#   runtime: 100
-#   mem_mb: 6000
-#   cpus_per_task: 1
+# name of outgroup tip in tree
+outgroup: darlingtonia_californica_SRR24877818

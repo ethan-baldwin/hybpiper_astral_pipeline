@@ -18,4 +18,9 @@ include: "rules/species_tree.smk"
 
 rule all:
     input:
-        "astral/speciestree.tre"
+        "astral/astral4.tre",
+        "astral/wastral.tre",
+        "astral/astral_4_bs10_scored.tre",
+        "astral/astral_4_bs10_poly.tre",
+        "astral/astral_4_bs10_qs.tre",
+        "astral/astral_4_bs10_qf.tre"
