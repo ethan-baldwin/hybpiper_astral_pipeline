@@ -6,7 +6,7 @@ rule collapse_low_bs:
     log:
         "logs/collapse_low_bs.log"
     conda:
-        "../envs/aster.yml"
+        "../envs/astral.yml"
     shell:
         "nw_ed  {input} 'i & b<=10' o > {output}"
 
